@@ -49,6 +49,9 @@
                         </v-tooltip>
                         {{ props.item.name }}
                     </td>
+                    <td class="text-xs-left subheading">
+                        {{ props.item.method ? props.item.method : '' }}
+                    </td>
                     <td class="text-xs-right">
                         <v-btn
                                 :color="getButtonColor(props.item)"
@@ -113,6 +116,7 @@
                 projects: [],
                 headers: [
                     { text: 'Project', value: 'name', class: 'title' },
+                    { text: 'Method', value: 'method', class: 'title' },
                     { text: 'Actions', value: 'actions', class: 'title', sortable: false, align: 'right' },
                 ],
                 buttonSucceded: '',
