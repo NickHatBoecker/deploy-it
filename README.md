@@ -2,6 +2,8 @@
 
 > An electron-vue app to deploy your projects with a click of a button.
 
+<img src="https://github.com/theskyliner/deploy-it/raw/master/screenshots/2.jpg" width="100%">
+
 #### Build Setup
 
 ``` bash
