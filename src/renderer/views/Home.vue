@@ -146,7 +146,10 @@
 
                 Vue.set(that.loading, project.name, true);
 
-                exec(project.deployScript, (error, stdout, stderr) => {
+                let customEnv = process.env
+                customEnv.PATH += ':/usr/local/bin'
+
+                exec(project.deployScript, { env: customEnv }, (error, stdout, stderr) => {
                     if (error) {
                         alert(error);
                         Vue.set(that.loading, project.name, false);
