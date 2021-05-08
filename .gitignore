@@ -1,5 +1,6 @@
 .DS_Store
-dist/*
+dist/electron/*
+dist/web/*
 build/*
 !build/icons
 node_modules/
@@ -7,4 +8,4 @@ npm-debug.log
 npm-debug.log.*
 thumbs.db
 !.gitkeep
-src/renderer/data/*
+deploy-it-darwin-x64/*

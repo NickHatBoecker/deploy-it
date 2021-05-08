@@ -1,0 +1,20 @@
+$primary: #ffd714;
+$success: #29de8a;
+$dark: #151e27;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn,
+input {
+    border-radius: 0 !important;
+}
+
+body { background: $dark; font-family: Arial, sans-serif; }

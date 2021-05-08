@@ -1,25 +1,16 @@
 import Vue from 'vue'
-import axios from 'axios'
-
 import App from './App'
-import router from './router'
-import store from './store'
+import BootstrapVue from 'bootstrap-vue'
 
-import Vuetify from 'vuetify'
+import '@/assets/app.scss'
+
+Vue.use(BootstrapVue)
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
-Vue.http = Vue.prototype.$http = axios
-
-Vue.use(Vuetify)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-    components: { App },
-    router,
-    store,
-    template: '<App/>'
+    components: {App},
+    template: '<App/>',
 }).$mount('#app')
-
-import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader

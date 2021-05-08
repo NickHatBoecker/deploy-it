@@ -2,15 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>NHB Deploy-it!</title>
+    <title>deploy-it</title>
     <% if (htmlWebpackPlugin.options.nodeModules) { %>
       <!-- Add `node_modules/` to global paths so `require` works properly in development -->
       <script>
         require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
       </script>
     <% } %>
-
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
   </head>
   <body>
     <div id="app"></div>
