@@ -1,5 +1,7 @@
 # deploy-it
 
+![Screenshot of deploy-it app](https://github.com/NickHatBoecker/deploy-it/blob/master/src/renderer/assets/screenshot.jpg?raw=true "Screenshot of deploy-it")
+
 > An electron-vue app to deploy your projects with a click of a button on MacOS.
 
 **ATTENTION**: This was only tested on MacOS.
