@@ -1,7 +1,12 @@
 <template>
     <div id="app">
         <navbar @openSettings="showSettingsModal = true" />
-        <item-list :items="projects" />
+
+        <div style="padding: 0 24px; margin-bottom: 12px;">
+            <input v-model="searchTerm" type="text" placeholder="Search" style="width: 100%;" />
+        </div>
+
+        <item-list :items="filteredProjects" />
         <settings-dialog
             v-model="showSettingsModal"
             :projects-path="projectsPath"
@@ -26,7 +31,21 @@ export default {
         projects: [],
         projectsPath: null,
         showSettingsModal: false,
+        searchTerm: '',
     }),
+
+    computed: {
+        filteredProjects () {
+            return this.projects.filter(x => {
+                if (this.searchTerm) {
+                    const lowerQuery = this.searchTerm.toLowerCase()
+                    if (!x.name.toLowerCase().includes(lowerQuery)) return false
+                }
+
+                return true
+            })
+        },
+    },
 
     async mounted () {
         if (localStorage.getItem(STORAGE_PROJECTS_PATH)) {
@@ -52,7 +71,10 @@ export default {
                     return
                 }
 
-                that.projects = JSON.parse(content)
+                that.projects = (JSON.parse(content)).filter(x => {
+                    if (typeof x.active === 'undefined') return true
+                    return x.active
+                })
             })
         },
 
